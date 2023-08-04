@@ -1354,7 +1354,7 @@
                           "textureWidth": 0.1,
                           "transform": {
                             "rx": 0,
-                            "ry": -0,
+                            "ry": 0,
                             "rz": 0,
                             "sx": 1,
                             "sy": 1,
@@ -1392,7 +1392,7 @@
                           "textureWidth": 0.1,
                           "transform": {
                             "rx": 0,
-                            "ry": -0,
+                            "ry": 0,
                             "rz": 0,
                             "sx": 1,
                             "sy": 1,
@@ -1828,7 +1828,7 @@
       "effectUsesAugmentGrouping": false,
       "effectUsesAugmentSizeControl": false,
       "effectUsesAutomaticAlphaSort": false,
-      "effectUsesAutomaticInstructions": true,
+      "effectUsesAutomaticInstructions": false,
       "effectUsesBlockModulesConfigExtras": false,
       "effectUsesBlocks": false,
       "effectUsesBlocksDownloadable": false,
@@ -1873,7 +1873,7 @@
       "effectUsesDspReverb": false,
       "effectUsesDspVocoder": false,
       "effectUsesDynamicExtrusion": false,
-      "effectUsesDynamicInstructions": false,
+      "effectUsesDynamicInstructions": true,
       "effectUsesDynamicText": false,
       "effectUsesEmbeddedVideo": false,
       "effectUsesEnvironmentTexturePatch": false,
@@ -2037,7 +2037,7 @@
       "effectUsesTexturesScriptingModule": false,
       "effectUsesTimeScriptingModule": false,
       "effectUsesToasterTracking": false,
-      "effectUsesTouchGestures": true,
+      "effectUsesTouchGestures": false,
       "effectUsesTwoDimensionalText": true,
       "effectUsesTypeScript": false,
       "effectUsesUiCore": false,
@@ -2086,7 +2086,9 @@
       "instructionFindHandFrontCameraEnabled": true,
       "instructionFindPersonBackCameraEnabled": true,
       "instructionFindPersonFrontCameraEnabled": true,
-      "instructionTokens": null,
+      "instructionTokens": [
+        "press_to_launch"
+      ],
       "interEffectLinkingEffectIds": null,
       "internalScriptingAPIDelay": false,
       "internalScriptingAPIDeprecatedParticles": false,
@@ -2121,7 +2123,7 @@
       "touchGesturesSupportsPinch": false,
       "touchGesturesSupportsRawTouch": false,
       "touchGesturesSupportsRotate": false,
-      "touchGesturesSupportsTap": true,
+      "touchGesturesSupportsTap": false,
       "whitelistedDomains": null,
       "witAppId": null,
       "witClientToken": null,
@@ -2149,8 +2151,13 @@
     {
       "identifier": "target:91760-c68598a1-d96e-43ad-8433-ab1d26de4e88",
       "modelName": "target",
-      "targetPlatforms": [],
-      "targetUseCases": []
+      "targetPlatforms": [
+        "instagram",
+        "facebook"
+      ],
+      "targetUseCases": [
+        "STORIES"
+      ]
     },
     {
       "identifier": "block_instances_model:91762-c68598a1-d96e-43ad-8433-ab1d26de4e88",
@@ -2220,7 +2227,7 @@
     }
   ],
   "projectFormatType": "single_file",
-  "revision": "91701c68598a1d96e43ad8433ab1d26de4e88",
+  "revision": "933216f1740bd3f9b4da3914736776a5195da",
   "usingPatchesV2": true,
   "version": {
     "dev": 0,
@@ -2366,20 +2373,28 @@
         "toPort": "101"
       },
       {
-        "fromPatch": "template_patch_model:199453-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-        "fromPort": "100",
-        "identifier": "patch_connection_model:199711-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-        "modelName": "patch_connection_model",
-        "toPatch": "template_patch_model:199709-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-        "toPort": "2"
-      },
-      {
-        "fromPatch": "template_patch_model:199709-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-        "fromPort": "100",
-        "identifier": "patch_connection_model:199713-c68598a1-d96e-43ad-8433-ab1d26de4e88",
+        "fromPatch": "producer_patch_model:97297-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "fromPort": "1003",
+        "identifier": "patch_connection_model:97299-6f1740bd-3f9b-4da3-9147-36776a5195da",
         "modelName": "patch_connection_model",
         "toPatch": "patch_asset_instance_model:197606-c68598a1-d96e-43ad-8433-ab1d26de4e88",
         "toPort": "16594405592126486861"
+      },
+      {
+        "fromPatch": "producer_patch_model:97297-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "fromPort": "1003",
+        "identifier": "patch_connection_model:97843-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "modelName": "patch_connection_model",
+        "toPatch": "template_patch_model:97841-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "toPort": "1"
+      },
+      {
+        "fromPatch": "template_patch_model:97841-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "fromPort": "100",
+        "identifier": "patch_connection_model:97845-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "modelName": "patch_connection_model",
+        "toPatch": "template_patch_model:97301-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "toPort": "1"
       }
     ],
     "graphs": [
@@ -2402,11 +2417,12 @@
           "consumer_patch_model:199195-c68598a1-d96e-43ad-8433-ab1d26de4e88",
           "patch_asset_instance_model:197606-c68598a1-d96e-43ad-8433-ab1d26de4e88",
           "producer_patch_model:197760-c68598a1-d96e-43ad-8433-ab1d26de4e88",
+          "producer_patch_model:97297-6f1740bd-3f9b-4da3-9147-36776a5195da",
           "template_patch_model:197762-c68598a1-d96e-43ad-8433-ab1d26de4e88",
           "template_patch_model:197764-c68598a1-d96e-43ad-8433-ab1d26de4e88",
           "template_patch_model:198939-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-          "template_patch_model:199453-c68598a1-d96e-43ad-8433-ab1d26de4e88",
-          "template_patch_model:199709-c68598a1-d96e-43ad-8433-ab1d26de4e88"
+          "template_patch_model:97301-6f1740bd-3f9b-4da3-9147-36776a5195da",
+          "template_patch_model:97841-6f1740bd-3f9b-4da3-9147-36776a5195da"
         ]
       }
     ],
@@ -2758,6 +2774,17 @@
         "values": []
       },
       {
+        "identifier": "producer_patch_model:97297-6f1740bd-3f9b-4da3-9147-36776a5195da",
+        "modelName": "producer_patch_model",
+        "name": "Camera",
+        "object": "camera:91778-c68598a1-d96e-43ad-8433-ab1d26de4e88",
+        "position": [
+          212,
+          -28
+        ],
+        "values": []
+      },
+      {
         "identifier": "template_patch_model:197762-c68598a1-d96e-43ad-8433-ab1d26de4e88",
         "modelName": "template_patch_model",
         "name": "Face Finder",
@@ -2799,25 +2826,33 @@
         "values": []
       },
       {
-        "identifier": "template_patch_model:199453-c68598a1-d96e-43ad-8433-ab1d26de4e88",
+        "identifier": "template_patch_model:97301-6f1740bd-3f9b-4da3-9147-36776a5195da",
         "modelName": "template_patch_model",
-        "name": "Screen Tap",
+        "name": "Conditional Instruction",
         "position": [
-          140,
+          500,
           -76
         ],
-        "templateId": "builtin.tapGesture",
-        "values": []
+        "templateId": "builtin.conditionalInstructionComponent",
+        "values": [
+          {
+            "port": "2",
+            "value": {
+              "t": "string",
+              "v": "press_to_launch"
+            }
+          }
+        ]
       },
       {
-        "identifier": "template_patch_model:199709-c68598a1-d96e-43ad-8433-ab1d26de4e88",
+        "identifier": "template_patch_model:97841-6f1740bd-3f9b-4da3-9147-36776a5195da",
         "modelName": "template_patch_model",
-        "name": "Switch",
+        "name": "Not",
         "position": [
-          404,
-          -100
+          356,
+          -52
         ],
-        "templateId": "builtin.toggle",
+        "templateId": "builtin.negation",
         "values": []
       }
     ]
